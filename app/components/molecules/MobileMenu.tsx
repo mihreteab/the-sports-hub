@@ -13,7 +13,7 @@ const MobileMenu = ({
       aria-label="Open menu"
       aria-expanded={drawerOpen}
       onClick={() => setDrawerOpen(true)}
-      className="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+      className="lg:hidden p-2 rounded-md dark:hover:bg-black/15"
     >
       <MenuIcon />
     </button>

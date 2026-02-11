@@ -14,7 +14,7 @@ const MobileDrawer = ({
       {drawerOpen && (
         <div
           role="presentation"
-          className="md:hidden fixed inset-0 z-50 transition-opacity"
+          className="lg:hidden fixed inset-0 z-50 transition-opacity"
           onClick={() => setDrawerOpen(false)}
           aria-hidden
         />
@@ -22,7 +22,7 @@ const MobileDrawer = ({
 
       {/* Mobile drawer panel (top right area: button is top right, drawer slides from right) */}
       <div
-        className={`md:hidden fixed top-0 right-0 z-50 h-full w-[min(18rem,85vw)] bg-white dark:bg-gray-950 border-l border-gray-200 dark:border-gray-800 shadow-xl transition-transform duration-200 ease-out ${
+        className={`lg:hidden fixed top-0 right-0 z-50 h-full w-[min(18rem,85vw)] bg-white dark:bg-gray-950 border-l border-gray-200 dark:border-gray-800 shadow-xl transition-transform duration-200 ease-out ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-modal="true"

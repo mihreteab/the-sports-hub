@@ -27,8 +27,8 @@ const NavLinks = ({
             end={to === ROUTES.LIVE}
             onClick={onNavigate}
             className={({ isActive }) =>
-              `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive ? "text-secondary" : ""
+              `block p-2 font-normal text-[18px] leading-[150%] tracking-normal transition-colors h-[43px] ${
+                isActive ? "text-secondary border-b-2" : ""
               }`
             }
           >
