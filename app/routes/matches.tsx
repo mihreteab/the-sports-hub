@@ -1,3 +1,5 @@
+import CompetetionSection from "~/components/molecules/CompetetionSection";
+import Tab from "~/components/molecules/Tab";
 import DesktopDateSelector from "~/components/organisms/DesktopDateSelector";
 import MobileDateSelector from "~/components/organisms/MobileDateSelector";
 import { META } from "~/constants";
@@ -11,7 +13,7 @@ export function meta() {
 
 export default function Matches() {
   return (
-    <div>
+    <div className="md:flex md:flex-col gap-4">
       <div className="md:hidden">
         <MobileDateSelector />
       </div>
@@ -20,6 +22,11 @@ export default function Matches() {
           Matches
         </div>
         <DesktopDateSelector />
+      </div>
+      <div className="flex flex-col gap-4 p-4 md:p-0">
+        <Tab />
+        <CompetetionSection />
+        <CompetetionSection />
       </div>
     </div>
   );
