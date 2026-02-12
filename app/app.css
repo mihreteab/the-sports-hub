@@ -9,11 +9,12 @@
   --color-primary-foreground: #ffffff;
   --color-surface: #1d1e2b;
   --color-onSurface: #000000;
+  --color-background: #181921;
 }
 
 html,
 body {
-  @apply bg-surface;
+  @apply bg-background;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;

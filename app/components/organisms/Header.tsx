@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="bg-primary sticky top-0 z-40 h-14 md:h-15">
-        <div className="mx-auto px-4 h-full">
+      <nav className=" sticky top-0 z-40 h-14 md:h-15 flex">
+        <div className="px-4 h-full bg-primary w-full">
           <div className="flex items-center justify-between h-full">
             <div className="md:hidden">
               <LogoMobile />
@@ -21,8 +21,6 @@ const Header = () => {
             <div className="hidden md:block">
               <LogoDesktop />
             </div>
-
-            {/* Desktop nav */}
             <div className="hidden lg:block">
               <NavLinks className="flex gap-1" />
             </div>
