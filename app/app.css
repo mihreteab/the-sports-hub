@@ -2,8 +2,11 @@
 
 @theme {
   --font-sans:
-    "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-poppins:
+    "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-primary: #6d00ff;
   --color-secondary: #00ffa5;
   --color-primary-foreground: #ffffff;
@@ -15,6 +18,9 @@
   --color-danger: #ee5e52;
   --color-foreground-static: #6b7280;
   --color-secondary-muted: #111827;
+  --color-base: #292b41;
+  --color-foreground-subtle: #e5e7eb;
+  --color-foreground-subtle-static: #6b7280;
 }
 
 /* Left-to-right fade: secondary tint to transparent */

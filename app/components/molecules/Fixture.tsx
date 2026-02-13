@@ -1,11 +1,19 @@
+import { Link } from "react-router";
 import ArsenalLogo from "../atoms/ArsenalLogo";
 import CheckIcon from "../atoms/CheckIcon";
 import OptionIcon from "../atoms/OptionIcon";
 import ValenciaLogo from "../atoms/ValenciaLogo";
 
-const Fixture = () => {
+interface FixtureProps {
+  id: string;
+}
+
+const Fixture = ({ id }: FixtureProps) => {
   return (
-    <div className="flex py-2">
+    <Link
+      to={`/matches/${id}`}
+      className="flex py-2 cursor-pointer hover:opacity-90 transition-opacity"
+    >
       <div className="flex-1 flex items-center border-l-3 border-danger bg-secondary-fade-left">
         <div className="flex items-center justify-center w-14 h-15 text-danger text-[12px] leading-[16px] tracking-normal">
           FT
@@ -36,12 +44,19 @@ const Fixture = () => {
           </div>
         </div>
         <div className="pl-2 flex items-center justify-center">
-          <button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            aria-label="Options"
+          >
             <OptionIcon />
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
