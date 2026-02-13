@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useParams } from "react-router";
 import ArrowIcon from "~/components/atoms/ArrowIcon";
 import ArsenalLogo from "~/components/atoms/ArsenalLogo";
 import MatchDetailsTab from "~/components/organisms/MatchDetailsTab";

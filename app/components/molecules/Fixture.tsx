@@ -12,7 +12,7 @@ const Fixture = ({ id }: FixtureProps) => {
   return (
     <Link
       to={`/matches/${id}`}
-      className="flex py-2 cursor-pointer hover:opacity-90 transition-opacity border"
+      className="flex py-2 cursor-pointer hover:opacity-90 transition-opacity"
     >
       <div className="flex-1 flex items-center border-l-3 border-danger bg-secondary-fade-left">
         <div className="flex items-center justify-center w-14 h-15 text-danger text-[12px] leading-[16px] tracking-normal">
