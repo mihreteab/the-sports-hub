@@ -10,8 +10,8 @@ const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <header>
-      <nav className=" sticky top-0 z-40 h-14 md:h-15 flex">
+    <header className="font-poppins">
+      <nav className="sticky top-0 z-40 h-14 md:h-15 flex">
         <div className="px-4 h-full bg-primary w-full">
           <div className="flex items-center justify-between h-full">
             <div className="md:hidden">
