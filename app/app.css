@@ -9,11 +9,26 @@
   --color-primary-foreground: #ffffff;
   --color-surface: #1d1e2b;
   --color-onSurface: #000000;
+  --color-background: #181921;
+  --color-background-muted: #26273b;
+  --color-foreground-muted: #d1d5db;
+  --color-danger: #ee5e52;
+  --color-foreground-static: #6b7280;
+  --color-secondary-muted: #111827;
+}
+
+/* Left-to-right fade: secondary tint to transparent */
+.bg-secondary-fade-left {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-secondary) 10%, transparent) 0%,
+    transparent 30.77%
+  );
 }
 
 html,
 body {
-  @apply bg-surface;
+  @apply bg-background;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
