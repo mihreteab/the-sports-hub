@@ -5,7 +5,9 @@
 
 import type {
   SportsDbEvent,
+  SportsDbEventDetailResponse,
   SportsDbLeagueEventsResponse,
+  SportsDbTimelineResponse,
 } from "~/types/sportsdb";
 
 function getBaseUrl(): string {
@@ -17,8 +19,14 @@ function getBaseUrl(): string {
   return import.meta.env.VITE_SPORTS_DB_BASE_URL ?? "";
 }
 
-function buildUrl(endpoint: string, params?: Record<string, string | number>) {
-  const base = getBaseUrl();
+const TIMELINE_BASE_URL = "https://www.thesportsdb.com/api/v1/json/123";
+
+function buildUrl(
+  endpoint: string,
+  params?: Record<string, string | number>,
+  baseOverride?: string
+) {
+  const base = baseOverride ?? getBaseUrl();
   if (!base) {
     throw new Response(
       "Sports DB base URL not configured (set SPORTS_DB_BASE_URL in .env)",
@@ -38,9 +46,10 @@ function buildUrl(endpoint: string, params?: Record<string, string | number>) {
 
 async function fetchApi<T>(
   endpoint: string,
-  params?: Record<string, string | number>
+  params?: Record<string, string | number>,
+  baseOverride?: string
 ): Promise<T> {
-  const url = buildUrl(endpoint, params);
+  const url = buildUrl(endpoint, params, baseOverride);
   const res = await fetch(url);
   if (!res.ok) {
     throw new Response(`Sports DB API error: ${res.statusText}`, {
@@ -52,6 +61,19 @@ async function fetchApi<T>(
 
 // ─── Events ───────────────────────────────────────────────────────────────
 
+/** Event details by ID (teams, score, date, status, badges) */
+export async function getEventById(
+  eventId: string
+): Promise<SportsDbEvent | null> {
+  const data = await fetchApi<SportsDbEventDetailResponse>(
+    "lookupevent.php",
+    { id: eventId },
+    TIMELINE_BASE_URL
+  );
+  const events = data.events ?? [];
+  return events[0] ?? null;
+}
+
 /** Next upcoming events for a league */
 export async function getLeagueNextEvents(
   leagueId: number | string = 4328
@@ -61,4 +83,14 @@ export async function getLeagueNextEvents(
     { id: leagueId }
   );
   return data.events ?? [];
+}
+
+/** Event timeline (goals, cards, substitutions, etc.) for a match */
+export async function getEventTimeline(eventId: string) {
+  const data = await fetchApi<SportsDbTimelineResponse>(
+    "lookuptimeline.php",
+    { id: eventId },
+    TIMELINE_BASE_URL
+  );
+  return data.timeline ?? [];
 }

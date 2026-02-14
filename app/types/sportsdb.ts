@@ -44,3 +44,20 @@ export interface SportsDbLeagueDetailResponse {
 export interface SportsDbTeamDetailResponse {
   teams: unknown[] | null;
 }
+
+export interface SportsDbTimelineItem {
+  idTimeline: string;
+  idEvent: string;
+  strTimeline: string;
+  strTimelineDetail: string;
+  strHome: string;
+  strEvent?: string;
+  strPlayer?: string;
+  strAssist?: string;
+  intTime?: string;
+  strTeam?: string;
+}
+
+export interface SportsDbTimelineResponse {
+  timeline: SportsDbTimelineItem[] | null;
+}

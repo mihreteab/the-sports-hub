@@ -74,7 +74,7 @@ const Fixture = ({ event }: FixtureProps) => {
       </div>
       <div className="flex gap-4">
         <div className="flex gap-4">
-          {hasScores ? (
+          {hasScores && (
             <>
               <div className="py-1 flex flex-col items-center">
                 <div className="text-foreground-static">
@@ -89,10 +89,6 @@ const Fixture = ({ event }: FixtureProps) => {
                 <div>{event.intAwayScore}</div>
               </div>
             </>
-          ) : (
-            <div className="py-1 flex flex-col items-center justify-center text-foreground-muted text-[12px]">
-              vs
-            </div>
           )}
         </div>
         <div className="pl-2 flex items-center justify-center">
