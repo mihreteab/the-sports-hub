@@ -129,7 +129,7 @@ export default function MatchDetail({ loaderData }: Route.ComponentProps) {
     <div className="flex flex-col gap-4 md:p-4 md:container">
       <div className="flex flex-col gap-4 pt-2 bg-surface">
         <div className="flex gap-4 py-2 px-4">
-          <Link to={ROUTES.LIVE} aria-label="Back to homepage">
+          <Link to={ROUTES.MATCHES} aria-label="Back to matches">
             <ArrowIcon />
           </Link>
           <div className="text-[14px] leading-[20px] tracking-normal">
