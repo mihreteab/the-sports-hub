@@ -1,11 +1,16 @@
+import type { SportsDbEvent } from "~/types/sportsdb";
 import Fixture from "./Fixture";
 
-const Fixtures = () => {
+interface FixturesProps {
+  events: SportsDbEvent[];
+}
+
+const Fixtures = ({ events }: FixturesProps) => {
   return (
     <div className="flex flex-col">
-      <Fixture id="1" />
-      <Fixture id="2" />
-      <Fixture id="3" />
+      {events.map((event) => (
+        <Fixture key={event.idEvent} event={event} />
+      ))}
     </div>
   );
 };
